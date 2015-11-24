@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: BookScrape-dev
+  pool: 5
+  host: localhost
+  username:
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: BookScrape-test
+  pool: 5
+  host: localhost
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: BookScrape-prod
+  pool: 5
+  username: 
+  password: <%= ENV['BOOKSCRAPE_DATABASE_PASSWORD'] %>
