@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Book Stores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @book_stores.each do |book_store| %>
+      <tr>
+        <td><%= book_store.name %></td>
+        <td><%= book_store.url %></td>
+        <td><%= link_to 'Show', book_store %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
