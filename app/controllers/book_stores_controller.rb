@@ -9,12 +9,9 @@ class BookStoresController < ApplicationController
   end
 
   private
-
-  def set_book_store
-    @book_store = BookStore.find(params[:id])
-  end
-
+  
   def book_store_params
     params.require(:book_store).permit(:name, :url)
   end
+  
 end
