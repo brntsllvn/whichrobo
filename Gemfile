@@ -23,6 +23,7 @@ group :development do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'better_errors'
+  gem 'binding_of_caller' # better_errors REPL
 end
 
 group :development, :test do

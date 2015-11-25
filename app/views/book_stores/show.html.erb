@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Back', book_stores_path %>
 
 <p>
   <strong>Name:</strong>
@@ -10,4 +11,11 @@
   <%= @book_store.url %>
 </p>
 
-<%= link_to 'Back', book_stores_path %>
+<p>
+  <strong>Download</strong>
+  <%= link_to 'CSV',   book_store_books_path(@book_store, format: 'csv') %>
+  <%= link_to 'Excel', book_store_books_path(@book_store, format: 'xls') %>
+  <%= render partial: 'books/books', locals: { books: @book_store.books.sort_by { |book| book.created_at } } %>
+</p>
+
+

@@ -20,7 +20,7 @@
   </thead>
 
   <tbody>
-    <% @books.each do |book| %>
+    <% books.each do |book| %>
       <tr>
         <td><%= book.isbn10 %></td>
         <td><%= book.isbn13 %></td>
@@ -32,7 +32,7 @@
         <td><%= book.used_in_stock %></td>
         <td><%= book.rent_price %></td>
         <td><%= book.rent_in_stock %></td>
-        <td><%= book.updated_at %></td>
+        <td><%= book.created_at %></td>
       </tr>
     <% end %>
   </tbody>
