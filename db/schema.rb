@@ -11,39 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124204953) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "book_stores", force: :cascade do |t|
-    t.string   "name"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
-  end
-
-  add_index "book_stores", ["deleted_at"], name: "index_book_stores_on_deleted_at", using: :btree
-
-  create_table "books", force: :cascade do |t|
-    t.string   "isbn10"
-    t.string   "title"
-    t.string   "author"
-    t.decimal  "new_price"
-    t.integer  "new_in_stock"
-    t.decimal  "used_price"
-    t.integer  "used_in_stock"
-    t.decimal  "rent_price"
-    t.integer  "rent_in_stock"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "isbn13"
-    t.integer  "book_store_id"
-    t.datetime "deleted_at"
-  end
-
-  add_index "books", ["book_store_id"], name: "index_books_on_book_store_id", using: :btree
-  add_index "books", ["deleted_at"], name: "index_books_on_deleted_at", using: :btree
 
 end
