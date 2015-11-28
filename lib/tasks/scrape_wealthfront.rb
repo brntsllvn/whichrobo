@@ -1,3 +1,11 @@
-# ruby lib/tasks/scrape_wealthfront.rb
+# https://devcenter.heroku.com/articles/scheduler
 
-puts 'hi'
+# ruby lib/assets/scrape_wealthfront.rb
+
+require 'mechanize'
+
+agent = Mechanize.new
+
+@page = agent.get('http://stackoverflow.com/')
+
+@page.title
