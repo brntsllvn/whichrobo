@@ -1,2 +1,22 @@
-<h1><%= @login %></h1>
-<h1><%= @home  %></h1>
+<p>Login Title: <%= @login %></p>
+<p>Home Title: <%= @home  %></p>
+
+<br>
+
+<p>Portfolio Title: <%= @portfolio_title %></p>
+<p>Account Value: <%= @account_value %></p>
+<p>Account Return: <%= @return  %></p>
+
+<br>
+
+<p>Holdings</p>
+asset class: <%= @ast_cls %><br>
+pct: <%= @pct %><br>
+mkt val: <%= @mkt_val %><br>
+basis: <%= @basis %><br>
+gain: <%= @gain %><br>
+
+<p>Transactions</p>
+<%= @trans_date %>
+<%= @trans_act %>
+<%= @trans_amt %>
