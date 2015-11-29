@@ -32,7 +32,6 @@ class WelcomeController < ApplicationController
     @trans_act  = transactions_page.search(".historical_transaction-row > td.activity").map(&:text).map(&:strip)
     @trans_amt  = transactions_page.search(".historical_transaction-row > td.numeric.amount").map(&:text).map(&:strip)
 
-
   end
 
 end
