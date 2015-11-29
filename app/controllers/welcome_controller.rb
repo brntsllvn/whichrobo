@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 
   def index
     agent = Mechanize.new
-    page = agent.get('https://www.wealthfront.com/login')
+    page = agent.get ENV["WF_PORT_URI"]
     login_form = page.forms.first
 
     login_form.email    = ENV["WF_EMAIL"] 
@@ -10,12 +10,14 @@ class WelcomeController < ApplicationController
 
     home_page = login_form.submit
 
-    @login = page.title
+    @login = page.title # add to specs
     @home  = home_page.title
 
     @portfolio_title = home_page.search(".current-title").text
-    @account_value = home_page.search(".ofa-total-and-return > h2").text
-    @return = home_page.search(".dash-sidebar-subinfo").text
+    @account_value   = home_page.search(".ofa-total-and-return > h2").text
+    @return          = home_page.search(".dash-sidebar-subinfo").text
+    @tlh             = home_page.search(".tlh-sidebar-subhead-amt-harvested").text
+    
 
     scraped_asset_classes     = home_page.search("td > span > a.ktip-a").map(&:text).map(&:strip)
     wealthfront_asset_classes = ["U.S. Stocks", "Foreign Stocks", "Emerging Markets", 
