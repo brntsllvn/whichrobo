@@ -2,40 +2,8 @@ class WelcomeController < ApplicationController
 
   def index
 
-    # models
-
-    ## portfolio
-    ### provider # Wealthfront
-    ### name
-    ### risk level
-    
-    #### has_many portfolio_level_data 
-    #### has_many transactions
-    #### has_many holdings
-
-    ## portfolio_level_data
-    ### value
-    ### return
-    ### TLH
-    #### belongs_to portfolio
-
-    ## transactions
-    ### date
-    ### activity
-    ### amount
-    #### belongs_to portfolio
-
-    ## holdings
-    ### asset class
-    ### pct 
-    ### mkt val
-    ### basis 
-    ### gain 
     ### test: overall = portfolio.value
     ### test: sum to 100%
-    #### belongs_to portfolio
-
-
 
     agent = Mechanize.new
     page = agent.get ENV["WF_PORT_URI"]
