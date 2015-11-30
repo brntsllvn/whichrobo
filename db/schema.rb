@@ -11,9 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151130003213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "holdings", force: :cascade do |t|
+    t.string   "asset_class"
+    t.decimal  "pct"
+    t.integer  "market_value"
+    t.integer  "cost_basis"
+    t.decimal  "gain"
+    t.integer  "portfolio_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "portfolio_level_data", force: :cascade do |t|
+    t.integer  "total_value"
+    t.decimal  "return"
+    t.integer  "harvested_losses"
+    t.integer  "portfolio_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "robo"
+    t.string   "name"
+    t.string   "risk_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "date"
+    t.string   "activity"
+    t.string   "amount"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "portfolio_id"
+  end
 
 end

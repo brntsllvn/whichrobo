@@ -4,7 +4,3 @@ task :scrape_wf => :environment do
   NewsFeed.update
   puts "done."
 end
-
-task :send_reminders => :environment do
-  User.send_reminders
-end
