@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
     ### test: sum to 100%
 
     agent = Mechanize.new
-    page = agent.get ENV["WF_PORT_URI"] # TODO: update in Heroku with final URI when portfolio created
+    page = agent.get ENV["WF_PORT_URI"] # TODO: update in Heroku git with final URI when portfolio created
     login_form = page.forms.first
 
     login_form.email    = ENV["WF_EMAIL"] 
